@@ -32,6 +32,9 @@ test('should re-render the board on each click, with alternating Xs and Os', () 
     expect(buttons[4].innerHTML).toBe('X');
 });
 
+/* This function does not have any 'expect' clauses since the getByText method will fail if there is
+no text exactly matching the string given. Therefore, if this test passes without failure, the correct
+status messages must be in display. */
 test('should update status message to alternate between whose turn it is', () => {
     const board = render(<Board initialSquares={Array(9).fill(null)}/>);
     const buttons = board.queryAllByRole('button');
